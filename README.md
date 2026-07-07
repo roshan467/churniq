@@ -44,7 +44,7 @@ python src/train_model.py       # train and evaluate models
 streamlit run src/app.py        # launch the dashboard
 ```
 
-Open http://localhost:8501
+
 
 ## Key results
 
@@ -58,13 +58,6 @@ Open http://localhost:8501
 
 The dataset is synthetically generated (`generate_data.py`) with churn probabilities driven by realistic business logic (contract type, tenure, payment method, support services) rather than randomly labeled — this makes the analysis and model results behave like a real churn dataset while keeping the project fully reproducible without external downloads. This is disclosed here and should be mentioned honestly if asked in an interview: *"I built a synthetic dataset with realistic churn drivers modeled on published telecom churn research, so I could build and ship the full pipeline without dataset licensing issues."*
 
-## Deploying to Streamlit Community Cloud (free, gets you a public link)
-
-1. Push this folder to a public GitHub repo
-2. Go to https://share.streamlit.io → "New app" → connect your repo
-3. Set the main file path to `src/app.py`
-4. Deploy — you'll get a public URL like `https://your-app.streamlit.app`
-5. Add that link to your resume's Portfolio/Projects section
 
 ## Tech stack
 
