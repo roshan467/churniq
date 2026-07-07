@@ -2,7 +2,7 @@
 
 An end-to-end data analytics project that identifies which customers are likely to churn, why they churn, and how much revenue is at risk — built to mirror the actual workflow of a Data Analyst at a subscription/telecom business.
 
-**Live demo:** *(deploy to Streamlit Community Cloud — see below — https://churniq-zetdu2o5bxzqmfslpqsvapp.streamlit.app/~/+/#churn-iq-customer-churn-analytics-and-prediction)*
+**Live demo:**  https://churniq-zetdu2o5bxzqmfslpqsvapp.streamlit.app/~/+/#churn-iq-customer-churn-analytics-and-prediction)
 
 ## What this project demonstrates
 
