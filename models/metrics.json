@@ -1,0 +1,39 @@
+{
+  "results": {
+    "logistic_regression": {
+      "accuracy": 0.621,
+      "precision": 0.3779,
+      "recall": 0.6984,
+      "f1": 0.4905,
+      "roc_auc": 0.6979
+    },
+    "random_forest": {
+      "accuracy": 0.6203,
+      "precision": 0.3729,
+      "recall": 0.6658,
+      "f1": 0.478,
+      "roc_auc": 0.701
+    }
+  },
+  "best_model": "random_forest",
+  "feature_importance": {
+    "contract": 0.3366,
+    "tenure_months": 0.1311,
+    "total_charges": 0.1213,
+    "monthly_charges": 0.085,
+    "avg_charge_per_month": 0.0838,
+    "is_new_customer": 0.0411,
+    "online_security": 0.0388,
+    "internet_service": 0.0368,
+    "payment_method": 0.0326,
+    "tech_support": 0.0272,
+    "gender": 0.014,
+    "senior_citizen": 0.0126,
+    "partner": 0.0117,
+    "paperless_billing": 0.0112,
+    "dependents": 0.0097,
+    "is_high_value": 0.0065
+  },
+  "churn_rate": 0.26096833735624025,
+  "n_samples": 7043
+}
