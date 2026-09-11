@@ -1,8 +1,8 @@
 # ChurnIQ — Customer Churn Analytics & Prediction Platform
 
-An end-to-end data analytics project that identifies which customers are likely to churn, why they churn, and how much revenue is at risk — built to mirror the actual workflow of a Data Analyst at a subscription/telecom business.
+An end-to-end data analytics project that identifies which customers are likely to churn, why they churn, and how much revenue is at risk — built to mirror the workflow of a Data Analyst at a subscription/telecom business.
 
-**Live demo:**  https://bit.ly/4gMB4d1
+**Live demo:** https://bit.ly/4gMB4d1
 
 ## What this project demonstrates
 
@@ -17,34 +17,64 @@ An end-to-end data analytics project that identifies which customers are likely 
 
 ## Project structure
 
-```
+```text
 ChurnIQ/
+├── app.py                       # Streamlit Cloud entry point; launches src/app.py
 ├── data/
-│   ├── telecom_customers.csv     # generated dataset (7,043 customers)
-│   └── churniq.db                # SQLite database for SQL analysis
+│   ├── telecom_customers.csv    # generated dataset (7,043 customers)
+│   └── churniq.db               # SQLite database for SQL analysis
 ├── src/
-│   ├── generate_data.py          # synthetic data generator (realistic churn drivers)
-│   ├── load_to_sql.py            # loads CSV into SQLite with derived fields
-│   ├── churn_analysis.sql        # 6 advanced SQL analytics queries
-│   ├── train_model.py            # feature engineering + model training/comparison
-│   └── app.py                    # Streamlit dashboard (4 tabs)
+│   ├── generate_data.py         # synthetic data generator (realistic churn drivers)
+│   ├── load_to_sql.py           # loads CSV into SQLite with derived fields
+│   ├── churn_analysis.sql       # 6 advanced SQL analytics queries
+│   ├── train_model.py           # feature engineering + model training/comparison
+│   └── app.py                   # Streamlit dashboard (4 tabs)
 ├── models/
-│   ├── churn_model.joblib        # trained model + encoders
-│   └── metrics.json              # evaluation results
-└── requirements.txt
+│   ├── churn_model.joblib       # trained model + encoders
+│   └── metrics.json             # evaluation results
+├── requirements.txt
+└── README.md
 ```
 
 ## How to run locally
 
 ```bash
 pip install -r requirements.txt
-python src/generate_data.py     # generate the dataset
-python src/load_to_sql.py       # load into SQLite
-python src/train_model.py       # train and evaluate models
-streamlit run src/app.py        # launch the dashboard
+python src/generate_data.py
+python src/load_to_sql.py
+python src/train_model.py
+streamlit run src/app.py
 ```
 
+## Deploy on Streamlit Community Cloud
 
+The repository includes a root-level `app.py` specifically for Streamlit deployment.
+
+1. Open Streamlit Community Cloud: https://share.streamlit.io/
+2. Select **Create app**.
+3. Choose the GitHub repository `roshan467/churniq`.
+4. Select branch `main`.
+5. Set **Main file path** to:
+
+```text
+app.py
+```
+
+6. Click **Deploy**.
+
+The root `app.py` launches the main dashboard from `src/app.py` while keeping the existing project structure unchanged.
+
+### Streamlit deployment troubleshooting
+
+If Streamlit reports that the main file does not exist, make sure the deployment configuration uses:
+
+```text
+Repository: roshan467/churniq
+Branch: main
+Main file path: app.py
+```
+
+Do not use `src\app.py` as the deployment entry path.
 
 ## Key results
 
@@ -56,8 +86,9 @@ streamlit run src/app.py        # launch the dashboard
 
 ## About the dataset
 
-The dataset is synthetically generated (`generate_data.py`) with churn probabilities driven by realistic business logic (contract type, tenure, payment method, support services) rather than randomly labeled — this makes the analysis and model results behave like a real churn dataset while keeping the project fully reproducible without external downloads. This is disclosed here and should be mentioned honestly if asked in an interview: *"I built a synthetic dataset with realistic churn drivers modeled on published telecom churn research, so I could build and ship the full pipeline without dataset licensing issues."*
+The dataset is synthetically generated (`generate_data.py`) with churn probabilities driven by realistic business logic (contract type, tenure, payment method, support services) rather than randomly labeled. This makes the analysis and model results reproducible without external downloads.
 
+For interviews, describe it honestly: *"I built a synthetic dataset with realistic churn drivers modeled on published telecom churn research, so I could build and ship the full pipeline without dataset licensing issues."*
 
 ## Tech stack
 
