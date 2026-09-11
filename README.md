@@ -2,7 +2,7 @@
 
 An end-to-end data analytics project that identifies which customers are likely to churn, why they churn, and how much revenue is at risk — built to mirror the workflow of a Data Analyst at a subscription/telecom business.
 
-**Live demo:** https://bit.ly/4gMB4d1
+**Live demo:** http://192.168.1.65:8501/
 
 ## What this project demonstrates
 
